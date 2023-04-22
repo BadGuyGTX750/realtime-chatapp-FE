@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import Navbar from "../components/navbar/Navbar";
 import "./LoginPage.css";
+import api_contact_login from "../api/api_contact_login";
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i
 const PASSWORD_REGEX = /^[A-Za-z\d!@#$%^&*()_+=[\]{}|\\;:",.<>/?]+$/i
@@ -30,6 +31,16 @@ const LoginPage = () => {
     setPasswordErr(false)
   }
 
+  const HandleLogin = () => {
+    api_contact_login(email, password)
+      .then(response => {
+        console.log("logged in")
+      })
+      .catch(error => {
+        console.log("login error")
+      })
+  }
+
   return(
     <div className="login-page">
       <Navbar/>
@@ -42,7 +53,7 @@ const LoginPage = () => {
         </div>
         <div className="login-page-window">
           <div className="login-page-window-form">
-            <Form onSubmit={e => {e.preventDefault(); console.log("submit")}}>
+            <Form onSubmit={e => {e.preventDefault(); HandleLogin();}}>
               <Form.Group className="login-page-form-group">
                 <Form.Control placeholder="Email" onBlur={e => HandleEmailChange(e.target.value)}/>
                 {emailErr && <h6>Valid email is required</h6>}
