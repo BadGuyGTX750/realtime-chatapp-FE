@@ -9,7 +9,7 @@ const RegisterPage = () => {
         <div className="register-page-header">
           <div className="register-page-header-title">
             <img src={require("../images/chatapp-icon.png")} alt="chatapp-icon" height="38px"></img>
-            <h5> CHATAPP WEB</h5>
+            <h5>WHATSAPP WEB</h5>
           </div>
         </div>
         <div className="register-page-window">
