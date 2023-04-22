@@ -39,13 +39,11 @@ const LoginPage = () => {
     api_contact_login(email, password)
       .then(response => {
         setTimeout(() => setIsLoading(false), 1000)
-        console.log("logged in")
       })
       .catch(error => {
         setTimeout(() => setIsLoading(false), 1000)
         setTimeout(() => setLogginErr(true), 1000)
         setTimeout(() => setLogginErr(false), 5000)
-        console.log("login error")
       })
   }
 
