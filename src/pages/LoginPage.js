@@ -14,6 +14,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState()
   const [passwordErr, setPasswordErr] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [loginErr, setLogginErr] = useState(false)
 
   const HandleEmailChange = (em) => {
     setEmail(em)
@@ -33,7 +34,7 @@ const LoginPage = () => {
     setPasswordErr(false)
   }
 
-  const HandleLogin = () => {
+  const HandleLogin = async () => {
     setIsLoading(true)
     api_contact_login(email, password)
       .then(response => {
@@ -42,6 +43,8 @@ const LoginPage = () => {
       })
       .catch(error => {
         setTimeout(() => setIsLoading(false), 1000)
+        setTimeout(() => setLogginErr(true), 1000)
+        setTimeout(() => setLogginErr(false), 5000)
         console.log("login error")
       })
   }
@@ -59,6 +62,12 @@ const LoginPage = () => {
         </div>
         <div className="login-page-window">
           <div className="login-page-window-form">
+            { 
+            loginErr &&
+            <div className="login-page-login-failed">
+              <h5>Failed to login. Please try again!</h5>
+            </div>
+            }
             <Form onSubmit={e => {e.preventDefault(); HandleLogin();}}>
               <Form.Group className="login-page-form-group">
                 <Form.Control placeholder="Email" onBlur={e => HandleEmailChange(e.target.value)}/>

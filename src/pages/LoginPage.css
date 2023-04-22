@@ -99,3 +99,18 @@
   transition: 0.3s ease-in;
   cursor: pointer;
 }
+
+.login-page-login-failed {
+  width: 21rem;
+  height: 3rem;
+  background-color: #ff3333;
+  margin-left: 7px;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+
+.login-page-login-failed h5 {
+  text-align: center;
+  padding-top: 1rem;
+  color: white
+}
