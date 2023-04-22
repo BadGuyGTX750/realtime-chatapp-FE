@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import Navbar from "../components/navbar/Navbar";
 import "./LoginPage.css";
 import api_contact_login from "../api/api_contact_login";
+import LoadingSpinner from "../components/spinner/LoadingSpinner";
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i
 const PASSWORD_REGEX = /^[A-Za-z\d!@#$%^&*()_+=[\]{}|\\;:",.<>/?]+$/i
@@ -12,6 +13,7 @@ const LoginPage = () => {
   const [emailErr, setEmailErr] = useState(false)
   const [password, setPassword] = useState()
   const [passwordErr, setPasswordErr] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const HandleEmailChange = (em) => {
     setEmail(em)
@@ -32,17 +34,21 @@ const LoginPage = () => {
   }
 
   const HandleLogin = () => {
+    setIsLoading(true)
     api_contact_login(email, password)
       .then(response => {
+        setTimeout(() => setIsLoading(false), 1000)
         console.log("logged in")
       })
       .catch(error => {
+        setTimeout(() => setIsLoading(false), 1000)
         console.log("login error")
       })
   }
 
   return(
     <div className="login-page">
+      {isLoading && <LoadingSpinner/>}
       <Navbar/>
       <div className="login-page-wrapper">
         <div className="login-page-header">
