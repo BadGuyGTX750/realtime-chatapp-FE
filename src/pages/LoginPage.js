@@ -17,13 +17,15 @@ const LoginPage = () => {
           </div>
         </div>
         <div className="login-page-window">
-          <Form onSubmit={e => {e.preventDefault()}}>
-            <Form.Group>
-              <Form.Control placeholder="Email" onChange={e => setEmail(e.target.value)}/>
-              <Form.Control placeholder="Password" onChange={e => setPassword(e.target.value)}/>
-            </Form.Group>
-            <Button type="submit" disabled={!email || !password}>Login</Button>
-          </Form>
+          <div className="login-page-window-form">
+            <Form onSubmit={e => {e.preventDefault()}}>
+              <Form.Group className="login-page-form-group">
+                <Form.Control placeholder="Email" onChange={e => setEmail(e.target.value)}/>
+                <Form.Control type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
+              </Form.Group>
+              <Button type="submit" disabled={!email || !password}>LOGIN</Button>
+            </Form>
+          </div>
         </div>
       </div>
     </div>
