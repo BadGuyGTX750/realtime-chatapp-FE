@@ -11,6 +11,15 @@
   flex-direction: row;
 }
 
+@media (max-width: 1435px) {
+  .conv-page-wrapper {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
 .conv-page-conv-list {
   width: 40%;
   min-width: 330px;
