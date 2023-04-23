@@ -94,7 +94,7 @@ const RegisterPage = () => {
   return(
     <div className="register-page">
       {isLoading && <LoadingSpinner/>}
-      <Navbar/>
+      <Navbar height="222px"/>
       <div className="register-page-wrapper">
         <div className="register-page-header">
           <div className="register-page-header-title">

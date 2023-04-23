@@ -1,8 +1,12 @@
-import "./Navbar.css"
 
-const Navbar = () => {
+const Navbar = ({height}) => {
+  const navbarStyle = {
+    height: height,
+    width: "100%",
+    "background-color": "#00a884"
+  }
   return(
-    <div className="navbar">
+    <div className="navbar" style={navbarStyle}>
 
     </div>
   )

@@ -51,7 +51,7 @@ const LoginPage = () => {
   return(
     <div className="login-page">
       {isLoading && <LoadingSpinner/>}
-      <Navbar/>
+      <Navbar height="222px"/>
       <div className="login-page-wrapper">
         <div className="login-page-header">
           <div className="login-page-header-title">
