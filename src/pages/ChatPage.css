@@ -1,12 +1,56 @@
 
 .conv-page-wrapper {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
   position: absolute;
-  min-width: 500px;
-  min-height: 500px;
-  width: 90%;
-  height: 90%;
+  min-height: 510px;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+.conv-page-conv-list {
+  width: 40%;
+  min-width: 330px;
+  max-width: 480px;
+  height: 100%;
+  background-color: blue;
+}
+
+.conv-page-conv-list-header {
+  height: 59px;
+  border-bottom: 1px solid #e9edef;
+  background-color: #f0f2f5;
+}
+
+.conv-page-conv-list-search {
+  height: 49px;
+  border-bottom: 1px solid #e9edef;
+  background-color: #ffffff;
+}
+
+.conv-page-conv-window {
+  width: 100%;
+  min-width: 420px;
+  height: 100%;
+  background-color: blueviolet;
+}
+
+.conv-page-conv-window-header {
+  height: 59px;
+  border-bottom: 1px solid #e9edef;
+  background-color: #f0f2f5;
+}
+
+.conv-page-conv-window-messages {
+  height: calc(100% - 120px);
+  border-bottom: 1px solid #e9edef;
+  background-color: #eae6df;
+}
+
+.conv-page-conv-window-type {
+  height: 60px;
+  background-color: #e9edef;
 }
