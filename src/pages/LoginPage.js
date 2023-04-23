@@ -39,6 +39,7 @@ const LoginPage = () => {
     api_contact_login(email, password)
       .then(response => {
         setTimeout(() => setIsLoading(false), 1000)
+        setTimeout(() => {window.location.href = "/conversations"})
       })
       .catch(error => {
         setTimeout(() => setIsLoading(false), 1000)
